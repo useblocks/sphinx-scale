@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "sphinx-scale"
+version = "0.1.0"
+description = ""
+authors = ["Daniel Woste <daniel.woste@useblocks.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Sphinx = "^3.5.3"
+pydata-sphinx-theme = "^0.5.2"
+sphinxcontrib-plantuml = "^0.20.1"
+sphinx-copybutton = "^0.3.1"
+sphinxcontrib-needs = "^0.6.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,20 @@
+.container-xl {
+    max-width: 100%;
+}
+
+.bd-sidebar {
+    max-width: 300px;
+}
+
+.bd-toc {
+    max-width: 300px;
+}
+
+/*.bd-content {*/
+/*    flex: 0 0 100%;*/
+/*    max-width: 100%;*/
+/*}*/
+
+.sphinx-scale-logo {
+    max-width: 600px;
+}
