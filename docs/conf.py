@@ -30,6 +30,7 @@ extensions = [
     'sphinxcontrib.plantuml',
     'sphinxcontrib.needs',
     'sphinx_copybutton',
+    'sphinx_panels',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

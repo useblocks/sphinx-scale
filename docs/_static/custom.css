@@ -18,3 +18,8 @@
 .sphinx-scale-logo {
     max-width: 600px;
 }
+
+.scale-card-image {
+    max-height: 52px;
+    margin: 20px 0 20px 0;
+}
