@@ -60,7 +60,7 @@ html_css_files = ['custom.css']
 html_context = {
     "github_user": "useblocks",
     "github_repo": "sphinx-scale",
-    "github_version": "master",
+    "github_version": "main",
     "doc_path": "docs",
 }
 
