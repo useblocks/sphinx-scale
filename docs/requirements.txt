@@ -1,0 +1,6 @@
+sphinx
+pydata-sphinx-theme
+sphinxcontrib-plantuml
+sphinx-copybutton
+sphinxcontrib-needs
+sphinx-panels
