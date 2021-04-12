@@ -2,7 +2,7 @@ Sphinx
 ======
 
 .. tool:: Sphinx
-   :id: t_sphinx
+   :id: sphinx
 
    Documentation generation framework for "Doc-As-Code" approach.
 
@@ -12,7 +12,7 @@ Extensions
 ----------
 
 .. tool:: Sphinx-Needs
-   :id: t_sphinx_needs
-   :uses: t_sphinx
+   :id: sphinx_needs
+   :uses: sphinx
 
    :link: https://sphinxcontrib-needs.readthedocs.io

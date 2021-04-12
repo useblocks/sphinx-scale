@@ -1,17 +1,17 @@
 .container-xl {
-    max-width: 100%;
+    max-width: 100% !important;
 }
 
 .bd-sidebar {
-    max-width: 300px;
+    max-width: 300px !important;
 }
 
 .bd-toc {
-    max-width: 300px;
+    max-width: 300px !important;
 }
 
 /*.bd-content {*/
-/*    flex: 0 0 100%;*/
+/*    flex: auto;*/
 /*    max-width: 100%;*/
 /*}*/
 

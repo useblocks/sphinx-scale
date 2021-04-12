@@ -85,9 +85,9 @@ html_theme_options = {
 ##############################
 
 needs_types = [dict(directive="role", title="Role", prefix="R_", color="#BFD8D2", style="node"),
-               dict(directive="problem", title="Problem", prefix="P_", color="#FEDCD2", style="node"),
-               dict(directive="solution", title="Solution", prefix="S_", color="#DF744A", style="node"),
-               dict(directive="tool", title="Tool", prefix="T_", color="#DCB239", style="node"),
+               dict(directive="problem", title="Problem", prefix="P_", color="#cb5d7e", style="node"),
+               dict(directive="solution", title="Solution", prefix="S_", color="#7dca5d", style="node"),
+               dict(directive="tool", title="Tool", prefix="T_", color="#5d7ecb", style="node"),
                ]
 
 needs_flow_link_types = ['links', 'worries', 'solves', 'uses']
@@ -103,8 +103,8 @@ needs_extra_links = [
         "option": "solves",
         "incoming": "is solved by",
         "outgoing": "solves",
-        "style": "#00AA00",
-        "style_part": "#00AA00",
+        "style": "bold,#7dca5d",
+        "style_part": "#7dca5d",
         "style_start": "-",
         "style_end": "->"
     },
@@ -113,20 +113,43 @@ needs_extra_links = [
         "option": "uses",
         "incoming": "used by",
         "outgoing": "uses",
+        "style": "bold,#5d7ecb",
     },
 ]
+
+needs_layouts = {
+    'solution': {
+        'grid': 'content_footer',
+        'layout': {
+            # 'head': ['**<<meta("title")>>** (<<meta("id")>>)'],
+            # 'meta': [],
+            'footer': ['**ID**: <<meta("id")>>']
+        }
+    }
+}
 
 needs_id_regex = "^[A-Za-z0-9_]"
 needs_id_required = True
 
 needs_global_options = {
       # Without default value
+      'template': [
+            ('solution', 'type=="solution"')
+      ],
       'post_template': [
             ('post_solution', 'type=="solution"')
       ],
       'pre_template': [
             ('pre_solution', 'type=="solution"')
-      ]
+      ],
+      'layout': [
+            ('solution', 'type=="solution"')
+      ],
+      'style': [
+            ('green_border', 'type=="solution"'),
+            ('red_border', 'type=="problem"'),
+            ('blue_border', 'type=="tool"')
+      ],
    }
 
 # PLANTUML config

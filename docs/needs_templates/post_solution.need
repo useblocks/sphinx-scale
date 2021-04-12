@@ -1,12 +1,36 @@
-Problems, which are solved by above solution: **{{title}}**
+.. tabbed:: Overview
 
-.. list-table::
-   :widths: 50 50
-   :header-rows: 1
+    .. panels::
+       :column: col-lg-5
 
-   * - Problems, solved by this solution
-     - Flowchart
-   * - .. needlist::
+       Connected objects
+       ^^^^^^^^^^^^^^^^^
+       **Problems**
+
+       .. needlist::
           :filter: '{{id}}' in solves_back
-     - .. needflow::
-        :filter: id == '{{id}}' or '{{id}}' in solves_back
+
+       **Tools**
+
+       .. needlist::
+          :filter: '{{id}}' in uses_back
+
+       ---
+       :column: col-lg-7
+       Flowchart
+       ^^^^^^^^^
+
+       .. needflow::
+          :filter: id == '{{id}}' or '{{id}}' in solves_back or '{{id}}' in uses_back
+
+.. tabbed:: Problems
+
+   .. needextract::
+      :filter: '{{id}}' in solves_back
+      :style: red_border
+
+.. tabbed:: Tools
+
+   .. needextract::
+      :filter: '{{id}}' in uses_back
+      :style: blue_border

@@ -17,3 +17,4 @@ Content
    :maxdepth: 1
 
    api
+   sphinx_needs

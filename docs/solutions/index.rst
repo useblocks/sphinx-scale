@@ -8,7 +8,7 @@ Data
 
 .. needtable::
    :types: solution
-   :columns: title, id, worries
+   :columns: title, id, solves
 
 Content
 -------
@@ -17,3 +17,4 @@ Content
    :maxdepth: 1
 
    api
+   sphinx_needs
