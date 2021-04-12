@@ -90,6 +90,8 @@ needs_types = [dict(directive="role", title="Role", prefix="R_", color="#BFD8D2"
                dict(directive="tool", title="Tool", prefix="T_", color="#DCB239", style="node"),
                ]
 
+needs_flow_link_types = ['links', 'worries', 'solves', 'uses']
+needs_flow_show_links = True
 needs_extra_links = [
     {   # Problem -> Role
         "option": "worries",
@@ -101,6 +103,10 @@ needs_extra_links = [
         "option": "solves",
         "incoming": "is solved by",
         "outgoing": "solves",
+        "style": "#00AA00",
+        "style_part": "#00AA00",
+        "style_start": "-",
+        "style_end": "->"
     },
 
     {   # Solution -> Tool, Tool -> Tool
@@ -112,6 +118,18 @@ needs_extra_links = [
 
 needs_id_regex = "^[A-Za-z0-9_]"
 needs_id_required = True
+
+needs_global_options = {
+      # Without default value
+      'post_template': [
+            ('post_solution', 'type=="solution"')
+      ],
+      'pre_template': [
+            ('pre_solution', 'type=="solution"')
+      ]
+   }
+
+# PLANTUML config
 
 on_rtd = os.environ.get('READTHEDOCS') == 'True'
 cwd = os.getcwd()

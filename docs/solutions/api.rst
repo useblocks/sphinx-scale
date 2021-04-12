@@ -1,6 +1,17 @@
 API
 ===
 
+Solutions on this page
+----------------------
+To search all ``solutions`` take a look into the upper page :ref:`solutions`.
+
+.. needtable::
+   :filter: "API" in sections and type=="solution"
+
+
+Solutions
+---------
+
 .. solution:: autodoc directive for Python APIs
    :id: s_python_api
    :solves: p_python_api

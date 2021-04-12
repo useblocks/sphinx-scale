@@ -1,0 +1,12 @@
+Problems, which are solved by above solution: **{{title}}**
+
+.. list-table::
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Problems, solved by this solution
+     - Flowchart
+   * - .. needlist::
+          :filter: '{{id}}' in solves_back
+     - .. needflow::
+        :filter: id == '{{id}}' or '{{id}}' in solves_back
