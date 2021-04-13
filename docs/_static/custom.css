@@ -1,22 +1,22 @@
 .container-xl {
-    max-width: 100% !important;
+    max-width: 1440px !important;
 }
 
 .bd-sidebar {
-    max-width: 300px !important;
+    max-width: 200px !important;
 }
 
-.bd-toc {
-    max-width: 300px !important;
-}
-
-/*.bd-content {*/
-/*    flex: auto;*/
-/*    max-width: 100%;*/
+/*.bd-toc {*/
+/*    max-width: 300px !important;*/
 /*}*/
+
+.bd-content {
+    width: 100%;
+}
 
 .sphinx-scale-logo {
     max-width: 600px;
+    max-height: 178px;
 }
 
 .scale-card-image {
