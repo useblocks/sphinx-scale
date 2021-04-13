@@ -4,9 +4,13 @@ version = "0.1.0"
 description = ""
 authors = ["Daniel Woste <daniel.woste@useblocks.com>"]
 license = "MIT"
+packages = [
+    { include = "sphinx_scale" },
+    { include = "sphinx_scale/**/*.py" },
+]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 Sphinx = "^3.5.3"
 pydata-sphinx-theme = "^0.5.2"
 sphinxcontrib-plantuml = "^0.20.1"
