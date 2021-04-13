@@ -11,6 +11,9 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
+import shutil
+import subprocess
+from docutils.parsers.rst import directives
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -88,6 +91,7 @@ needs_types = [dict(directive="role", title="Role", prefix="R_", color="#BFD8D2"
                dict(directive="problem", title="Problem", prefix="P_", color="#cb5d7e", style="node"),
                dict(directive="solution", title="Solution", prefix="S_", color="#7dca5d", style="node"),
                dict(directive="tool", title="Tool", prefix="T_", color="#5d7ecb", style="node"),
+               dict(directive="demo", title="Demo", prefix="D_", color="#cccccc", style="node"),
                ]
 
 needs_flow_link_types = ['links', 'worries', 'solves', 'uses']
@@ -115,15 +119,22 @@ needs_extra_links = [
         "outgoing": "uses",
         "style": "bold,#5d7ecb",
     },
+    {   # Demo -> Solution
+        "option": "demonstrates",
+        "incoming": "demonstrated by",
+        "outgoing": "demonstrates",
+        "style": "bold,#cccccc",
+    },
+
 ]
 
 needs_layouts = {
-    'solution': {
+    'scale_short': {
         'grid': 'content_footer',
         'layout': {
             # 'head': ['**<<meta("title")>>** (<<meta("id")>>)'],
             # 'meta': [],
-            'footer': ['**ID**: <<meta("id")>>']
+            'footer': ['**ID**: <<meta_id()>>']
         }
     }
 }
@@ -131,25 +142,37 @@ needs_layouts = {
 needs_id_regex = "^[A-Za-z0-9_]"
 needs_id_required = True
 
+needs_extra_options = {
+    "path": directives.unchanged,  # Used by demo need
+    "build_status": directives.unchanged,  # Used by demo need
+    "build_path": directives.unchanged,  # Used by demo need
+    "demo_path": directives.unchanged,  # Used by demo need
+}
+
 needs_global_options = {
       # Without default value
       'template': [
             ('solution', 'type=="solution"')
       ],
       'post_template': [
-            ('post_solution', 'type=="solution"')
+            ('post_solution', 'type=="solution"'),
+            ('post_problem', 'type=="problem"'),
+            ('post_demo', 'type=="demo"')
       ],
       'pre_template': [
-            ('pre_solution', 'type=="solution"')
+            ('pre_scale', 'type in ["solution", "problem", "demo", "role"]')
       ],
       'layout': [
-            ('solution', 'type=="solution"')
+            ('scale_short', 'type in ["solution", "problem", "demo", "role"]')
       ],
       'style': [
             ('green_border', 'type=="solution"'),
             ('red_border', 'type=="problem"'),
             ('blue_border', 'type=="tool"')
       ],
+      'build_status': [  # Starts the build of the demo
+          ('[[build()]]', 'type=="demo"')
+      ]
    }
 
 # PLANTUML config
@@ -174,3 +197,40 @@ if os.name == "nt":
 
 # plantuml_output_format = 'png'
 plantuml_output_format = 'svg_img'
+
+
+def build(env, need, needs):
+    """
+    Builds a sphinx-project in demos/ and copies the build-result to the current sphinx project
+    build folder under "demos/demo-id".
+    """
+    demo_path = os.path.abspath(os.path.join(env.srcdir, need['path']))
+    demo_conf = os.path.join(demo_path, 'conf.py')
+    assert os.path.isfile(demo_conf)
+    demo_build_html = os.path.join(demo_path, '_build', 'html')
+
+    # Start sphinx to build this demo
+    exit_code = subprocess.call(f'sphinx-build -b html {demo_path} {demo_build_html}', shell=True)
+    need['build_path'] = demo_build_html
+    need['demo_path'] = f"/demos/{need['id']}/index.html"
+
+    # Copy the demo html content to sphinx-scale outdir.
+    scale_outdir = env.app.builder.outdir
+    scale_demos = os.path.join(scale_outdir, 'demos/')
+    scale_this_demo = os.path.join(scale_demos, need['id']+ '/')
+    try:
+        os.mkdir(scale_demos)
+    except FileExistsError:
+        pass
+
+    try:
+        os.mkdir(scale_this_demo)
+    except FileExistsError:
+        pass
+
+    shutil.copytree(demo_build_html, scale_this_demo, dirs_exist_ok=True)
+
+    return 'passed' if exit_code == 0 else 'failed'
+
+
+needs_functions = [build]

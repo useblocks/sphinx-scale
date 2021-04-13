@@ -34,3 +34,8 @@
    .. needextract::
       :filter: '{{id}}' in uses_back
       :style: blue_border
+
+.. tabbed:: Demos
+
+   .. needextract::
+      :filter: '{{id}}' in demonstrates

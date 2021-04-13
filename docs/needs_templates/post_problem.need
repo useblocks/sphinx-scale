@@ -1,0 +1,35 @@
+.. tabbed:: Overview
+
+    .. panels::
+       :column: col-lg-5
+
+       Connected objects
+       ^^^^^^^^^^^^^^^^^
+       **Solutions**
+
+       .. needlist::
+          :filter: '{{id}}' in solves
+
+       **Roles**
+
+       .. needlist::
+          :filter: '{{id}}' in worries_back
+
+       ---
+       :column: col-lg-7
+       Flowchart
+       ^^^^^^^^^
+
+       .. needflow::
+          :filter: id == '{{id}}' or '{{id}}' in solves or '{{id}}' in worries_back
+
+.. tabbed:: Solutions
+
+   .. needextract::
+      :filter: '{{id}}' in solves
+      :style: green_border
+
+.. tabbed:: Roles
+
+   .. needextract::
+      :filter: '{{id}}' in worries_back

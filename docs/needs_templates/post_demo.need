@@ -1,0 +1,12 @@
+.. link-button:: {{id}}/index.html
+      :type: url
+      :text: Open demo {{id}}
+      :classes: btn-primary btn-block
+
+.. dropdown:: Show included solutions
+
+   .. needextract::
+      :filter: '{{id}}' in demonstrates_back
+      :layout: clean
+      :style: green_border
+

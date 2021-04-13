@@ -1,5 +1,4 @@
 .. image:: _static/sphinx_scale_wide_logo.png
-   :width: 80%
    :align: center
    :class: sphinx-scale-logo
 
@@ -14,7 +13,7 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
 
 .. panels::
     :card: + intro-card text-center
-    :column: col-lg-3 col-md-6 col-sm-6 col-xs-12 d-flex
+    :column: col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex
     :img-top-cls: scale-card-image
 
     ---
@@ -62,6 +61,11 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
             :text: Roles documentation
             :classes: btn-block btn-secondary stretched-link
 
+.. panels::
+    :card: + intro-card text-center
+    :column: col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex
+    :img-top-cls: scale-card-image
+
     ---
     :img-top: _static/icon_tool.svg
 
@@ -75,6 +79,21 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
     .. link-button:: tools
             :type: ref
             :text: Tools documentation
+            :classes: btn-block btn-secondary stretched-link
+
+    ---
+    :img-top: _static/icon_demo.svg
+
+    See demos
+    ^^^^^^^^^
+
+    See the implementation of several solutions in different demos.
+
+    +++
+
+    .. link-button:: demos
+            :type: ref
+            :text: Demos
             :classes: btn-block btn-secondary stretched-link
 
 All data
@@ -102,6 +121,7 @@ Content
    problems/index
    solutions/index
    tools/index
+   demos/index
    usage
    contribute
 
