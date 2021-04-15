@@ -1,3 +1,7 @@
+:root {
+    --tabs-color-label-active: #111;
+    --tabs-color-label-inactive: #aaa;
+}
 .container-xl {
     max-width: 1440px !important;
 }
