@@ -13,7 +13,7 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
 
 .. panels::
     :card: + intro-card text-center
-    :column: col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex
+    :column: col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex
     :img-top-cls: scale-card-image
 
     ---
@@ -45,26 +45,6 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
             :type: ref
             :text: Solutions documentation
             :classes: btn-block btn-secondary stretched-link
-
-    ---
-    :img-top: _static/icon_role.svg
-
-    Analyse your role
-    ^^^^^^^^^^^^^^^^^
-
-    Find out what typical problems a specific process role may have with ``Docs-As-Code`` and ``Sphinx``.
-
-    +++
-
-    .. link-button:: roles
-            :type: ref
-            :text: Roles documentation
-            :classes: btn-block btn-secondary stretched-link
-
-.. panels::
-    :card: + intro-card text-center
-    :column: col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex
-    :img-top-cls: scale-card-image
 
     ---
     :img-top: _static/icon_tool.svg
@@ -117,7 +97,6 @@ Content
 .. toctree::
    :maxdepth: 2
 
-   roles/index
    problems/index
    solutions/index
    tools/index

@@ -16,4 +16,5 @@ Content
 .. toctree::
    :maxdepth: 1
 
+   documentation
    sphinx

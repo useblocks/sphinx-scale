@@ -16,3 +16,12 @@ Extensions
    :uses: sphinx
 
    :link: https://sphinxcontrib-needs.readthedocs.io
+
+
+.. tool:: Breathe
+   :id: breathe
+   :uses: doxygen, sphinx
+
+   Breathe provides a bridge between the Sphinx and Doxygen documentation systems.
+
+   :link: https://breathe.readthedocs.io/en/latest/

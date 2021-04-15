@@ -23,3 +23,8 @@
     max-height: 52px;
     margin: 20px 0 20px 0;
 }
+
+/* Center the demo/github buttons of demo needs */
+table.demo td {
+    text-align: center;
+}

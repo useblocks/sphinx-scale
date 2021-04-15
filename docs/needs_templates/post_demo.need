@@ -1,12 +1,32 @@
-.. link-button:: {{id}}/index.html
-      :type: url
-      :text: Open demo {{id}}
-      :classes: btn-primary btn-block
+.. tabbed:: Demo result
 
-.. dropdown:: Show included solutions
+   .. raw:: html
+
+       <iframe src="{{path}}/index.html" height="345px" width="100%"></iframe>
+
+.. tabbed:: Solution overview
+
+   .. needtable::
+      :style: table
+      :columns: title, id
+      :filter: '{{id}}' in demonstrates_back
+
+.. tabbed:: conf.py
+
+   .. literalinclude:: /../demos/{{id}}/conf.py
+      :language: python
+
+.. tabbed:: index.rst
+
+   .. literalinclude:: /../demos/{{id}}/index.rst
+      :language: rst
+
+.. tabbed:: Solutions
 
    .. needextract::
       :filter: '{{id}}' in demonstrates_back
       :layout: clean
       :style: green_border
+
+
 
