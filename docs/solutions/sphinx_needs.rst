@@ -1,14 +1,6 @@
 Sphinx-Needs
 ============
 
-Solutions on this page
-----------------------
-To search all ``solutions`` take a look into the upper page :ref:`solutions`.
-
-.. needtable::
-   :filter: "Sphinx-Needs" in sections and type=="solution"
-   :columns: title, id, solves
-
 .. solution:: template option for needs
    :id: sphinx_needs_templates
    :solves: needs_pre_post_content

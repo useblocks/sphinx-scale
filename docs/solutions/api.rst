@@ -1,14 +1,6 @@
 API
 ===
 
-Solutions on this page
-----------------------
-To search all ``solutions`` take a look into the upper page :ref:`solutions`.
-
-.. needtable::
-   :filter: "API" in sections and type=="solution"
-   :columns: title, id, solves
-
 .. solution:: autodoc directive for Python APIs
    :id: sphinx_autodoc
    :solves: python_api_doc

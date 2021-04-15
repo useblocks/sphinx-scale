@@ -9,7 +9,7 @@ Sphinx-scale Documentation
 main documentation tool.
 
 This documentations provides currently :need_count:`type=="solution"` solutions for :need_count:`type=="problem"`
-problems, which :need_count:`type=="role"` process roles may worry about in :need_count:`type=="tool"` tools.
+problems in :need_count:`type=="tool"` tools. Additionally :need_count:`type=="demo"` demos are available..
 
 .. panels::
     :card: + intro-card text-center
@@ -34,8 +34,8 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
     ---
     :img-top: _static/icon_solution.svg
 
-    Get a solution
-    ^^^^^^^^^^^^^^
+    Get a solution!
+    ^^^^^^^^^^^^^^^
 
     Take a look into our solutions for common problems.
 
@@ -49,8 +49,8 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
     ---
     :img-top: _static/icon_tool.svg
 
-    Find new tools
-    ^^^^^^^^^^^^^^
+    Find new tools!
+    ^^^^^^^^^^^^^^^
 
     Find new ideas in our tool, extensions and script chapter.
 
@@ -64,8 +64,8 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
     ---
     :img-top: _static/icon_demo.svg
 
-    See demos
-    ^^^^^^^^^
+    See and analyze demos!
+    ^^^^^^^^^^^^^^^^^^^^^^
 
     See the implementation of several solutions in different demos.
 
