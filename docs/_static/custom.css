@@ -1,3 +1,7 @@
+:root {
+    --tabs-color-label-active: #111;
+    --tabs-color-label-inactive: #aaa;
+}
 .container-xl {
     max-width: 1440px !important;
 }
@@ -22,4 +26,9 @@
 .scale-card-image {
     max-height: 52px;
     margin: 20px 0 20px 0;
+}
+
+/* Center the demo/github buttons of demo needs */
+table.demo td {
+    text-align: center;
 }

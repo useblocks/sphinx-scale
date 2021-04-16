@@ -3,17 +3,10 @@
     .. panels::
        :column: col-lg-5
 
-       Connected objects
-       ^^^^^^^^^^^^^^^^^
-       **Solutions**
-
+       Solutions
+       ^^^^^^^^^
        .. needlist::
           :filter: '{{id}}' in solves
-
-       **Roles**
-
-       .. needlist::
-          :filter: '{{id}}' in worries_back
 
        ---
        :column: col-lg-7
@@ -21,15 +14,10 @@
        ^^^^^^^^^
 
        .. needflow::
-          :filter: id == '{{id}}' or '{{id}}' in solves or '{{id}}' in worries_back
+          :filter: id == '{{id}}' or '{{id}}' in solves
 
 .. tabbed:: Solutions
 
    .. needextract::
       :filter: '{{id}}' in solves
       :style: green_border
-
-.. tabbed:: Roles
-
-   .. needextract::
-      :filter: '{{id}}' in worries_back

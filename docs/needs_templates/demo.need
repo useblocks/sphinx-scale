@@ -1,0 +1,14 @@
+{{content}}
+
+.. list-table::
+   :align: center
+   :class: demo
+
+   * - .. link-button:: {{path}}/index.html
+          :type: url
+          :text: Open demo
+          :classes: btn-primary
+     - .. link-button:: https://github.com/useblocks/sphinx-scale/tree/main/demos/{{id}}
+          :type: url
+          :text: Analyse code on github
+          :classes: btn-secondary

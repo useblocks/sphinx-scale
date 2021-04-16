@@ -14,6 +14,8 @@ import os
 import shutil
 import subprocess
 from docutils.parsers.rst import directives
+
+from sphinx.util import logging
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -35,6 +37,8 @@ extensions = [
     'sphinx_copybutton',
     'sphinx_panels',
 ]
+
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -87,6 +91,8 @@ html_theme_options = {
 # SPHINX-NEEDS CONFIGURATION #
 ##############################
 
+needs_role_need_template = "{title}"
+
 needs_types = [dict(directive="role", title="Role", prefix="R_", color="#BFD8D2", style="node"),
                dict(directive="problem", title="Problem", prefix="P_", color="#cb5d7e", style="node"),
                dict(directive="solution", title="Solution", prefix="S_", color="#7dca5d", style="node"),
@@ -94,15 +100,9 @@ needs_types = [dict(directive="role", title="Role", prefix="R_", color="#BFD8D2"
                dict(directive="demo", title="Demo", prefix="D_", color="#cccccc", style="node"),
                ]
 
-needs_flow_link_types = ['links', 'worries', 'solves', 'uses']
+needs_flow_link_types = ['links', 'solves', 'uses']
 needs_flow_show_links = True
 needs_extra_links = [
-    {   # Problem -> Role
-        "option": "worries",
-        "incoming": "worries about",
-        "outgoing": "worries",
-    },
-
     {   # Solution -> Problem
         "option": "solves",
         "incoming": "is solved by",
@@ -147,12 +147,14 @@ needs_extra_options = {
     "build_status": directives.unchanged,  # Used by demo need
     "build_path": directives.unchanged,  # Used by demo need
     "demo_path": directives.unchanged,  # Used by demo need
+    "demo_conf": directives.unchanged,  # Used by demo need
 }
 
 needs_global_options = {
       # Without default value
       'template': [
-            ('solution', 'type=="solution"')
+            ('solution', 'type=="solution"'),
+            ('demo', 'type=="demo"')
       ],
       'post_template': [
             ('post_solution', 'type=="solution"'),
@@ -204,15 +206,20 @@ def build(env, need, needs):
     Builds a sphinx-project in demos/ and copies the build-result to the current sphinx project
     build folder under "demos/demo-id".
     """
+    log = logging.getLogger(__name__)
+
     demo_path = os.path.abspath(os.path.join(env.srcdir, need['path']))
     demo_conf = os.path.join(demo_path, 'conf.py')
     assert os.path.isfile(demo_conf)
     demo_build_html = os.path.join(demo_path, '_build', 'html')
 
+    log.info(f'Building demo {need["id"]} at {demo_path}')
+
     # Start sphinx to build this demo
     exit_code = subprocess.call(f'sphinx-build -b html {demo_path} {demo_build_html}', shell=True)
     need['build_path'] = demo_build_html
     need['demo_path'] = f"/demos/{need['id']}/index.html"
+    need['demo_conf'] = f"/demos/{need['id']}/conf.py"
 
     # Copy the demo html content to sphinx-scale outdir.
     scale_outdir = env.app.builder.outdir

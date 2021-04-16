@@ -9,11 +9,11 @@ Sphinx-scale Documentation
 main documentation tool.
 
 This documentations provides currently :need_count:`type=="solution"` solutions for :need_count:`type=="problem"`
-problems, which :need_count:`type=="role"` process roles may worry about in :need_count:`type=="tool"` tools.
+problems in :need_count:`type=="tool"` tools. Additionally :need_count:`type=="demo"` demos are available..
 
 .. panels::
     :card: + intro-card text-center
-    :column: col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex
+    :column: col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex
     :img-top-cls: scale-card-image
 
     ---
@@ -34,8 +34,8 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
     ---
     :img-top: _static/icon_solution.svg
 
-    Get a solution
-    ^^^^^^^^^^^^^^
+    Get a solution!
+    ^^^^^^^^^^^^^^^
 
     Take a look into our solutions for common problems.
 
@@ -47,30 +47,10 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
             :classes: btn-block btn-secondary stretched-link
 
     ---
-    :img-top: _static/icon_role.svg
-
-    Analyse your role
-    ^^^^^^^^^^^^^^^^^
-
-    Find out what typical problems a specific process role may have with ``Docs-As-Code`` and ``Sphinx``.
-
-    +++
-
-    .. link-button:: roles
-            :type: ref
-            :text: Roles documentation
-            :classes: btn-block btn-secondary stretched-link
-
-.. panels::
-    :card: + intro-card text-center
-    :column: col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex
-    :img-top-cls: scale-card-image
-
-    ---
     :img-top: _static/icon_tool.svg
 
-    Find new tools
-    ^^^^^^^^^^^^^^
+    Find new tools!
+    ^^^^^^^^^^^^^^^
 
     Find new ideas in our tool, extensions and script chapter.
 
@@ -84,8 +64,8 @@ problems, which :need_count:`type=="role"` process roles may worry about in :nee
     ---
     :img-top: _static/icon_demo.svg
 
-    See demos
-    ^^^^^^^^^
+    See and analyze demos!
+    ^^^^^^^^^^^^^^^^^^^^^^
 
     See the implementation of several solutions in different demos.
 
@@ -117,7 +97,6 @@ Content
 .. toctree::
    :maxdepth: 2
 
-   roles/index
    problems/index
    solutions/index
    tools/index
