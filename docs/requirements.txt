@@ -5,3 +5,4 @@ sphinx-copybutton
 #sphinxcontrib-needs
 git+git://github.com/useblocks/sphinxcontrib-needs@master
 sphinx-panels
+breathe
