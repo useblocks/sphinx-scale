@@ -14,6 +14,7 @@
  *
  *    Unique content string to easily identify in generated xml files: FOOBAR2021
  *
+ * Link test to :need:`NEED_1`
  *
  * \endrst
  */

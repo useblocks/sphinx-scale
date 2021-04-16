@@ -12,6 +12,11 @@ RST content
    :id: NEED_1
    :status: open
 
+.. need:: Need inside rst
+   :id: NEED_3
+   :status: open
+   :links: NEED_1
+
 C++ files
 ---------
 :file: code/doxygen_example.hpp
@@ -35,5 +40,7 @@ Analysis
 .. needtable::
    :style: table
    :columns: id, title, status, outgoing, incoming
+
+.. needflow::
 
 

@@ -30,7 +30,7 @@ author = 'sphinx-scale community'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinxcontrib.needs', 'breathe']
+extensions = ['sphinxcontrib.plantuml', 'sphinxcontrib.needs', 'breathe']
 
 
 breathe_projects = {"doxygen_example": "_build/doxygen/xml"}
@@ -46,6 +46,29 @@ else:
     for prjname, prjdir in breathe_projects.items():
         assert os.path.exists(prjdir) is True, \
             "Regenerate doxygen XML for {}".format(prjname)
+
+# PLANTUML config
+
+on_rtd = os.environ.get('READTHEDOCS') == 'True'
+cwd = os.getcwd()
+local_plantuml_path = os.path.join(cwd, "../../docs/utils/plantuml.jar")
+
+if on_rtd:
+    # Deactivated using rtd plantuml version as it looks quite old.
+    # plantuml = 'java -Djava.awt.headless=true -jar /usr/share/plantuml/plantuml.jar'
+    plantuml = 'java -Djava.awt.headless=true -jar {}'.format(local_plantuml_path)
+else:
+    cwd = os.getcwd()
+    plantuml = 'java -jar {}'.format(local_plantuml_path)
+
+# If we are running on windows, we need to manipulate the path,
+# otherwise plantuml will have problems.
+if os.name == "nt":
+    plantuml = plantuml.replace("/", "\\")
+    plantuml = plantuml.replace("\\", "\\\\")
+
+# plantuml_output_format = 'png'
+plantuml_output_format = 'svg_img'
 
 
 # Add any paths that contain templates here, relative to this directory.
