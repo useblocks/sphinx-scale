@@ -2,5 +2,6 @@ sphinx
 pydata-sphinx-theme
 sphinxcontrib-plantuml
 sphinx-copybutton
-sphinxcontrib-needs
+#sphinxcontrib-needs
+git+git://github.com/useblocks/sphinxcontrib-needs@master
 sphinx-panels

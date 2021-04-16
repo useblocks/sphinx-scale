@@ -8,8 +8,9 @@
  * .. note:: An example hpp to show doxygen problem
  *
  * .. need:: Need inside hpp
- *    :id: ID124
+ *    :id: NEED_2
  *    :status: open
+ *    :links: NEED_1
  *
  *    Unique content string to easily identify in generated xml files: FOOBAR2021
  *

@@ -9,7 +9,7 @@ Demo C++ API with Doxygen
 RST content
 -----------
 .. need:: Need inside rst
-   :id: ID123
+   :id: NEED_1
    :status: open
 
 C++ files
@@ -33,6 +33,7 @@ Doxygen include
 Analysis
 --------
 .. needtable::
-    :style: table
+   :style: table
+   :columns: id, title, status, outgoing, incoming
 
 
