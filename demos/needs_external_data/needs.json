@@ -1,17 +1,22 @@
 {
-    "created": "2021-04-15T17:17:29.761033",
+    "created": "2021-04-17T22:32:14.277708",
     "current_version": "",
     "project": "Sphinx Needs external data",
     "versions": {
         "": {
-            "created": "2021-04-15T17:17:29.761025",
+            "created": "2021-04-17T22:32:14.277699",
             "filters": {},
             "filters_amount": 0,
             "needs": {
                 "REQ_1": {
+                    "assignee": "Alice",
                     "avatar": "",
                     "closed_at": "",
                     "completion": "",
+                    "connects": [],
+                    "connects_back": [
+                        "SPEC_1"
+                    ],
                     "created_at": "",
                     "description": "",
                     "docname": "index",
@@ -19,10 +24,12 @@
                     "full_title": "Dummy requirement",
                     "hidden": "",
                     "id": "REQ_1",
+                    "id_complete": "REQ_1",
+                    "id_parent": "REQ_1",
                     "id_prefix": "",
                     "is_need": true,
                     "is_part": false,
-                    "layout": "",
+                    "layout": "clean",
                     "links": [],
                     "max_amount": "",
                     "max_content_lines": "",
@@ -50,9 +57,16 @@
                     "user": ""
                 },
                 "SPEC_1": {
+                    "assignee": "Bob",
                     "avatar": "",
                     "closed_at": "",
                     "completion": "",
+                    "connects": [
+                        "REQ_1"
+                    ],
+                    "connects_back": [
+                        "TEST_1"
+                    ],
                     "created_at": "",
                     "description": "",
                     "docname": "index",
@@ -60,10 +74,12 @@
                     "full_title": "Dummy specification",
                     "hidden": "",
                     "id": "SPEC_1",
+                    "id_complete": "SPEC_1",
+                    "id_parent": "SPEC_1",
                     "id_prefix": "",
                     "is_need": true,
                     "is_part": false,
-                    "layout": "",
+                    "layout": "clean",
                     "links": [
                         "REQ_1"
                     ],
@@ -93,10 +109,14 @@
                     "user": ""
                 },
                 "TEST_1": {
-                    "connects": ["SPEC_1"],
+                    "assignee": "Charlie",
                     "avatar": "",
                     "closed_at": "",
                     "completion": "",
+                    "connects": [
+                        "SPEC_1"
+                    ],
+                    "connects_back": [],
                     "created_at": "",
                     "description": "",
                     "docname": "index",
@@ -104,10 +124,12 @@
                     "full_title": "Dummy test case",
                     "hidden": "",
                     "id": "TEST_1",
+                    "id_complete": "TEST_1",
+                    "id_parent": "TEST_1",
                     "id_prefix": "",
                     "is_need": true,
                     "is_part": false,
-                    "layout": "",
+                    "layout": "clean",
                     "links": [
                         "SPEC_1",
                         "REQ_1"
@@ -138,7 +160,7 @@
                     "user": ""
                 }
             },
-            "needs_amount": 3
+            "needs_amount": 6
         }
     }
 }

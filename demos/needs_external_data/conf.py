@@ -13,6 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+from docutils.parsers.rst import directives
 
 
 # -- Project information -----------------------------------------------------
@@ -41,8 +42,12 @@ needs_extra_links = [
 
 needs_global_options = {
    # Without default value
-   'layout': 'debug'
+   'layout': 'clean'
 }
+
+needs_extra_options = {
+  "assignee": directives.unchanged,
+ }
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

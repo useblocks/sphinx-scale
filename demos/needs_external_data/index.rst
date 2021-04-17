@@ -21,16 +21,19 @@ Original Needs
 
 .. req:: Dummy requirement
    :id: REQ_1
+   :assignee: Alice
 
 .. spec:: Dummy specification
    :id: SPEC_1
    :links: REQ_1
    :connects: REQ_1
+   :assignee: Bob
 
 .. test:: Dummy test case
    :id: TEST_1
    :links: SPEC_1, REQ_1
-   :connects: SPEC_1, REQ_1
+   :connects: SPEC_1
+   :assignee: Charlie
 
 
 Created needs.json
@@ -50,13 +53,13 @@ Using::
 
 .. needimport:: needs.json
    :id_prefix: IMPORTED_
+   :layout: complete
+   :style: red_border
 
 
+All needs
+---------
 
+.. needtable::
+   :columns: id, title, outgoing, incoming, connects, connects_back
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
