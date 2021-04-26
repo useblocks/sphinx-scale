@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'test-demo'
-copyright = '2021, team useblocks'
-author = 'team useblocks'
+project = 'Nested needs'
+copyright = '2021, sphinx scale'
+author = 'sphinx scale'
 
 
 # -- General configuration ---------------------------------------------------
@@ -28,7 +28,14 @@ author = 'team useblocks'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinxcontrib.needs'
 ]
+
+from docutils.parsers.rst import directives
+
+needs_extra_options = {
+  "main_req": directives.unchanged,
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

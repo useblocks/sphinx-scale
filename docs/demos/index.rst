@@ -3,13 +3,9 @@
 Demos
 =====
 
-
-.. demo:: test-demo
-   :id: test_demo
-   :path: ../demos/test_demo
-   :demonstrates: sphinx_needs_templates, sphinx_autodoc
-
-   Just a dummy demo
+.. needtable::
+   :types: demo
+   :columns: title, id, demonstrates
 
 
 .. demo:: Sphinx Needs external data
@@ -29,4 +25,10 @@ Demos
    The sphinx extension ``Breathe`` reads in the ``Doxygen`` results and creates
    the needed data in this sphinx project.
 
+.. demo:: Nested Need objects
+   :id: nested_needs
+   :path: ../demos/nested_needs
 
+   Uses embedded/nested needs and some
+   `dynamic functions <https://sphinxcontrib-needs.readthedocs.io/en/latest/dynamic_functions.html>`_ to automatically
+   link child needs to parent needs.
